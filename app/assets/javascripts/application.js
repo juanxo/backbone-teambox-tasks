@@ -11,7 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require initialize.js
+//= require ./models/basemodel.js
 //= require_tree ./models
+//= require ./collections/basecollection.js
 //= require_tree ./collections
 //= require_tree ./views
 //= require teambox-oauth.js
