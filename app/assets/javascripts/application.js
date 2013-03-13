@@ -11,5 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require initialize.js
-//= require backbone-teambox-tasks.js
 //= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require teambox-oauth.js
+//= require_tree ./routers

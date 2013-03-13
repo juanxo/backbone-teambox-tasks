@@ -2,8 +2,20 @@
 <html>
   <head>
     <title>Ruby on Rails: Welcome aboard</title>
+    <link rel="stylesheet" href="/assets/application.css" />
   </head>
   <body>
+
+    <div class="wrapper">
+      <ul id="tasks">
+      </ul>
+    </div>
+
+    <script id="taskTemplate" type"text/template">
+      <h3 class="task-title"><%= model.escape("name") %></h3>
+      <small class="task-author"></small>
+    </script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://underscorejs.org/underscore.js"></script>
     <script src="http://backbonejs.org/backbone.js"></script>
