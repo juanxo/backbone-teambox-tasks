@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
+    <title>Teambox Tasks</title>
     <link rel="stylesheet" href="/assets/application.css" />
   </head>
   <body>
@@ -9,11 +9,25 @@
     <div class="wrapper">
       <ul id="tasks">
       </ul>
+      <footer>
+        <span class="powered-by">powered by <a href="http://backbonejs.org">Backbone</a></span>
+        <span class="pattern-credit">classy background pattern courtesy of <a
+            href="http://hydrogen666.deviantart.com" />Hydrogen666</a></span>
+      </footer>
     </div>
 
-    <script id="taskTemplate" type"text/template">
+    <script id="taskTemplate" type="text/template">
+      <div class="pull-right">
+        <small class="task-author">by <%= model.rel("user").escape("username") %></small>
+        <small class="task-date"><%= moment(model.get("created_at")).fromNow() %></small>
+      </div>
       <h3 class="task-title"><%= model.escape("name") %></h3>
-      <small class="task-author"></small>
+      <hr>
+      <div class="task-comments">
+        <% _.each(model.get("recent_comments"), function(comment) { %>
+          <p class="task-comment"><%= comment.body %></p>
+        <% }); %>
+      </div>
     </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -23,6 +37,7 @@
       src="https://raw.github.com/masylum/underscore.inflection/master/underscore.inflection.js"></script>
     <script src="https://raw.github.com/masylum/Backbone.Rel/master/backbone.rel.js"></script>
     <script src="https://raw.github.com/Juanxo/backbone-oauth/master/backbone.oauth.js"></script>
+    <script src="https://raw.github.com/timrwood/moment/2.0.0/min/moment.min.js"></script>
     <script src="/assets/application.js"></script>
   </body>
 </html>

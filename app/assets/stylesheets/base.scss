@@ -1,15 +1,67 @@
+// Misc
+
+.pull-right {
+  float: right;
+}
+
+// Layout
+
+.wrapper {
+  width: 700px;
+  margin: 0 auto;
+}
+
+body {
+  background: #333 url(/assets/classy-background.png) repeat;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 700px;
+}
+
+// Task
 #tasks {
   list-style: none;
 }
 
 .task {
   display: block;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #333;
   overflow: auto;
+  margin: 20px 0;
+  background-color: #fff;
 
+  border-radius: 4px 4px 0 0;
+
+  hr {
+    clear: both;
+  }
 }
 
-.task-name {
+.task-title {
   float: left;
+  margin: 0;
+}
+
+.task-author,
+.task-date {
+  display: block;
+}
+
+// footer
+
+footer {
+  color: #fff;
+
+  span {
+    display: block;
+  }
+
+  a {
+    color: #aaa;
+  }
 }
