@@ -12,7 +12,7 @@ you are thinking about using a great project management tool, check [them](https
 In a conversation over email (sooo retro) with @masylum(their CTO), he told me that they moved to a
 client-side solution, using Backbone.js.
 
-I've never tried before any client-side framework before (I used to think that they weren't really
+I've never tried any client-side framework before (I used to think that they weren't really
 neccessary, as you could squeeze enough performance from a conventional rails application and it
 would be far easier to maintain)
 
