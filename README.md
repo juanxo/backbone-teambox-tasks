@@ -16,7 +16,7 @@ I've never tried any client-side framework before (I used to think that they wer
 neccessary, as you could squeeze enough performance from a conventional rails application and it
 would be far easier to maintain)
 
-Also, I would like to work someday with them :heart:
+Also, I would like to work someday, somehow, with them :heart:
 
 # TODO #
 
@@ -24,6 +24,7 @@ I just started to getting my feet wet with client side frameworks, and there are
 like to do in this application:
 
 * Expandable tasks: Click on task header to expand them (nested views, etc)
+* Better user feedback: Warn about auth popup, spinner on tasks loading.
 * Add task lists and filters (Backbone.Rel, events et al.)
 * Server side templates (trimmer perhaps, once I get my head around it)
 * Better way to oauth (not having to give authorization everytime you connect and get rid of the
