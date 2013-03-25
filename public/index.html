@@ -15,17 +15,18 @@
     </div>
 
     <script id="taskTemplate" type="text/template">
-      <div class="pull-right">
-        <small class="task-author">by <%= model.rel("user").escape("username") %></small>
-        <small class="task-date"><%= moment(model.get("created_at")).fromNow() %></small>
+      <div class="task-header">
+        <div class="pull-right">
+          <small class="task-author">by <%= model.rel("user").escape("username") %></small>
+          <small class="task-date"><%= moment(model.get("created_at")).fromNow() %></small>
+        </div>
+        <h3 class="task-title"><%= model.escape("name") %></h3>
       </div>
-      <h3 class="task-title"><%= model.escape("name") %></h3>
-      <hr>
-      <div class="task-comments">
-        <% _.each(model.get("recent_comments"), function(comment) { %>
-          <p class="task-comment"><%= comment.body %></p>
-        <% }); %>
-      </div>
+      <ul class="task-comments">
+      </ul>
+    </script>
+    <script id="commentTemplate" type="text/template">
+      <%= model.get('body_html') %>
     </script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
