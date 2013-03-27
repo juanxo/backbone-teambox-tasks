@@ -12,4 +12,4 @@ Juanxo.Views.CommentView = Backbone.View.extend({
     this.$el.html(this.template({ model: this.model }));
     return this;
   }
-})
+});

@@ -37,10 +37,10 @@ $(document).ready( function() {
       $.when(
           Juanxo.collections.tasks.fetch(),
           Juanxo.collections.users.fetch()
-          ).done(function(){Backbone.history.start()});
+          ).done(function(){Backbone.history.start();});
     }
 
-  }
+  };
 
   teamboxOAuth.auth();
 });
