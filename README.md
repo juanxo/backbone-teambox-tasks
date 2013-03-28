@@ -16,8 +16,6 @@ I've never tried any client-side framework before (I used to think that they wer
 neccessary, as you could squeeze enough performance from a conventional rails application and it
 would be far easier to maintain)
 
-Also, I would like to work someday, somehow, with them :heart:
-
 # TODO #
 
 I just started to getting my feet wet with client side frameworks, and there are some things I would
