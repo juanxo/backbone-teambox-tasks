@@ -8,15 +8,23 @@ Juanxo.Views.TaskView = Backbone.View.extend({
   },
 
   initialize: function() {
-    _.bindAll(this, 'render', 'toggleExpansion');
+    _.bindAll(this, 'render', 'toggleExpansion', 'renderComments');
+    var self = this;
     this.expanded = false;
+    this.model.comments = new Juanxo.Collections.Comments([], { taskId: this.model.get('id') });
+    this.model.comments.fetch({
+      success: function(collection) {
+        self.renderComments(collection);
+      }
+    });
   },
 
   render: function() {
     this.$el.html(this.template({model : this.model}));
+    this.el.id = 'task-' + this.model.id;
     if (this.expanded) {
       this.$('.task-comments').show();
-      this.renderComments(this.model.get('recent_comments'));
+      this.renderComments(this.model.comments);
     } else {
       this.$('.task-comments').hide();
     }
@@ -26,22 +34,21 @@ Juanxo.Views.TaskView = Backbone.View.extend({
   renderComments: function(comments) {
     var $comments = this.$('.task-comments');
     $comments.empty();
-    _.each(comments, function(comment) {
-      comment = new Juanxo.Models.Comment(comment);
-      var commentHtml = (new Juanxo.Views.CommentView({ model : comment})).render().el;
-      $comments.append(commentHtml);
-    });
+    if (comments) {
+      comments.each(function(comment) {
+        var commentHtml = (new Juanxo.Views.CommentView({ model : comment})).render().el;
+        $comments.append(commentHtml);
+      });
+    }
   },
 
   toggleExpansion: function(e) {
     this.expanded = !this.expanded;
     this.$el.toggleClass('expanded');
     if (this.expanded) {
-      this.renderComments(this.model.get('recent_comments'));
-      this.$('.task-comments').show();
-    } else {
-      this.$('.task-comments').hide();
+      this.renderComments(this.model.comments);
     }
+    this.$('.task-comments').toggle();
   }
 
 });
