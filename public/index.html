@@ -26,6 +26,17 @@
       </ul>
     </script>
     <script id="commentTemplate" type="text/template">
+      <div class="task-duedates">
+        <% if (model.get('previous_due_on')) { %>
+          <span class="task-duedate task-duedate-previous"><%= model.escape('previous_due_on') %></span>
+          to
+        <% } %>
+        <% if (model.get('due_on')) { %>
+          <span class="task-duedate task-duedate-current"><%= model.escape('due_on') %></span>
+        <% } else if (model.get('previous_due_on')) { %>
+          <span class="task-duedate task-duedate-none">None</span>
+        <% } %>
+      </div>
       <%= model.get('body_html') %>
     </script>
 
