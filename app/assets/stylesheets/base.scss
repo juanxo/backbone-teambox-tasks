@@ -74,7 +74,6 @@ footer {
 .task-duedate {
   display: inline-block;
   padding: 2px 5px;
-  margin: 10px 0;
   border-radius: 3px;
   font-size: 0.8em;
   border-width: 1px;
@@ -107,6 +106,13 @@ $none-duedate-background-darkened: darken($none-duedate-background, 10%);
   @include background(linear-gradient($none-duedate-background, $none-duedate-background-darkened 70%));
   color: #fff;
   border-color: $none-duedate-background-darkened;
+}
+
+// comments
+
+.task-comment {
+  padding: 10px 0;
+  overflow: auto;
 }
 
 // footer

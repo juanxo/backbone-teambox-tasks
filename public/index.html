@@ -17,15 +17,28 @@
     <script id="taskTemplate" type="text/template">
       <div class="task-header">
         <div class="pull-right">
-          <small class="task-author">by <%= model.rel("user").escape("username") %></small>
-          <small class="task-date"><%= moment(model.get("created_at")).fromNow() %></small>
+          <small class="task-author">by <%= model.rel('user').escape('username') %></small>
+          <small class="task-date">
+            <% if (moment().diff(model.get('created_at'), 'months') > 1) { %>
+              <%= moment(model.get('created_at')).format('D/MM/YYYY') %>
+            <% } else { %>
+              <%= moment(model.get('created_at')).fromNow() %>
+            <% } %>
+          </small>
         </div>
-        <h3 class="task-title"><%= model.escape("name") %></h3>
+        <h3 class="task-title"><%= model.escape('name') %></h3>
       </div>
       <ul class="task-comments">
       </ul>
     </script>
     <script id="commentTemplate" type="text/template">
+      <small class="comment-date" style="float: right;">
+        <% if (moment().diff(model.get('created_at'), 'months') > 1) { %>
+          <%= moment(model.get('created_at')).format('D/MM/YYYY') %>
+        <% } else { %>
+          <%= moment(model.get('created_at')).fromNow() %>
+        <% } %>
+      </small>
       <div class="task-duedates">
         <% if (model.get('previous_due_on')) { %>
           <span class="task-duedate task-duedate-previous"><%= model.escape('previous_due_on') %></span>
