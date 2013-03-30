@@ -27,7 +27,6 @@ Juanxo.Models.BaseModel = Backbone.Model.extend({
     var newOptions = _.extend({
       dataType: 'jsonp',
       data: { access_token: Juanxo.Config.accessToken },
-      processData: false
     }, options);
     return Backbone.sync(method, model, newOptions);
   }
