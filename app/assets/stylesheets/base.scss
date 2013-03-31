@@ -71,7 +71,9 @@ footer {
   border-top: 1px solid #333;
 }
 
-.task-duedate {
+// comment
+
+.comment-duedate {
   display: inline-block;
   padding: 2px 5px;
   margin: 10px 0;
@@ -88,21 +90,21 @@ $old-duedate-background-darkened: darken($old-duedate-background, 10%);
 $none-duedate-background: #dd1010;
 $none-duedate-background-darkened: darken($none-duedate-background, 10%);
 
-.task-duedate-previous {
+.comment-duedate-previous {
   background-color: $old-duedate-background;
   @include background(linear-gradient($old-duedate-background, $old-duedate-background-darkened 70%));
   color: #666;
   border-color: $old-duedate-background-darkened;
 }
 
-.task-duedate-current {
+.comment-duedate-current {
   background-color: $new-duedate-background;
   @include background(linear-gradient($new-duedate-background, $new-duedate-background-darkened 70%));
   color: #fff;
   border-color: $new-duedate-background-darkened;
 }
 
-.task-duedate-none {
+.comment-duedate-none {
   background-color: $none-duedate-background;
   @include background(linear-gradient($none-duedate-background, $none-duedate-background-darkened 70%));
   color: #fff;
