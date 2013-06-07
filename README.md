@@ -6,6 +6,8 @@ an external API (teambox)
 _Disclaimer: This isn't by any means at the same level of quality and polish that Teambox. If
 you are thinking about using a great project management tool, check [them](https://teambox.com)_
 
+![Screenshot]( /screenshot.png "Screenshot")
+
 
 # Why #
 
