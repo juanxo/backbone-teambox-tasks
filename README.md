@@ -18,7 +18,7 @@ would be far easier to maintain)
 
 # TODO #
 
-I just started to getting my feet wet with client side frameworks, and there are some things I would
+I just started to get my feet wet with client side frameworks, and there are some things I would
 like to do in this application:
 
 * Expandable tasks: Click on task header to expand them (nested views, etc)
